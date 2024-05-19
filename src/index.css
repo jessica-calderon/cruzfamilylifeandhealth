@@ -1,0 +1,127 @@
+/* index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+/* Subtle underline animation */
+a {
+  position: relative;
+  color: #D4AF37;
+  text-decoration: none;
+}
+
+a::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #D4AF37;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+a:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  width: 100%; /* Ensure the body takes full width */
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+/* index.css */
+button {
+  background-color: #D4AF37; /* Gold background */
+  color: #000000; /* Black text */
+  padding: 8px 16px; /* Adequate padding */
+  font-weight: 500; /* Medium font weight */
+  border-radius: 8px; /* Rounded corners */
+  border: 2px solid transparent; /* Transparent border that can change on hover */
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out; /* Smooth transitions */
+  cursor: pointer; /* Cursor indicates clickable */
+}
+
+button:hover {
+  background-color: #B39B30; /* Darker gold on hover */
+  color: #ffffff; /* White text on hover */
+  border-color: #D4AF37; /* Gold border on hover */
+}
+/* Focus State */
+input:focus {
+  outline: none;
+  border-color: #D4AF37;
+  box-shadow: 0 0 0 1px #D4AF37;
+}
+
+/* index.css or in a <style> block */
+.modal-enter {
+  opacity: 0;
+  transform: scale(0.95);
+}
+
+.modal-enter-active {
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 300ms, transform 300ms;
+}
+
+.modal-exit {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.modal-exit-active {
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 300ms, transform 300ms;
+}
+
+
+/* Responsive Design */
+@media (min-width: 768px) {
+  .modal-container {
+    padding: 8rem; /* More padding on larger screens */
+  }
+}
+
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
